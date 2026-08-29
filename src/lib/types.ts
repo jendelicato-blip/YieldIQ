@@ -99,6 +99,8 @@ export interface FundNavHistoryPoint {
   verification_status: VerificationStatus;
 }
 
+export type TaxClassificationStatus = "final" | "estimated";
+
 export interface FundDistribution {
   fund_ticker: string;
   ex_date: string;
@@ -108,8 +110,34 @@ export interface FundDistribution {
   implied_yield_pct: number | null;
   return_of_capital_pct: number | null;
   ordinary_income_pct: number | null;
+  qualified_dividend_pct: number | null;
+  capital_gains_pct: number | null;
+  short_term_capital_gains_pct: number | null;
+  long_term_capital_gains_pct: number | null;
+  other_pct: number | null;
+  classification_status: TaxClassificationStatus | null;
+  tax_year: number | null;
+  classification_source: string | null;
+  data_source: string | null;
+  verification_status: VerificationStatus;
+}
+
+// Aggregated, fund-level tax profile — derived from the most recent
+// distribution that carries a reported classification. Never fabricated:
+// getFundTaxProfile() returns null when no fund distribution has been
+// classified yet, and the UI renders "Tax classification unavailable."
+export interface FundTaxProfile {
+  fund_ticker: string;
+  as_of_ex_date: string;
+  roc_pct: number | null;
+  ordinary_income_pct: number | null;
+  qualified_dividend_pct: number | null;
+  short_term_capital_gains_pct: number | null;
+  long_term_capital_gains_pct: number | null;
   capital_gains_pct: number | null;
   other_pct: number | null;
+  classification_status: TaxClassificationStatus | null;
+  tax_year: number | null;
   classification_source: string | null;
   data_source: string | null;
   verification_status: VerificationStatus;

@@ -72,6 +72,10 @@ export default function FilterBar({ managers, strategies }: FilterOptions) {
         <option value="risk_low">Sort: Lowest Risk</option>
         <option value="newest">Sort: Newest</option>
         <option value="ticker">Sort: Ticker (A–Z)</option>
+        <option value="roc_high">Sort: Highest ROC %</option>
+        <option value="qualified_high">Sort: Highest Qualified Dividend %</option>
+        <option value="ordinary_low">Sort: Lowest Ordinary Income %</option>
+        <option value="tax_efficient">Sort: Most Tax-Efficient*</option>
       </select>
     </div>
   );

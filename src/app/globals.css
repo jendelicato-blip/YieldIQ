@@ -30,6 +30,15 @@
   --negative: #f0645f;
   --caution: #e0a636;
   --info: #5b9dd9;
+
+  /* Categorical palette for tax-classification breakdown (fixed order,
+     validated for CVD-safe adjacent contrast — never reused as status
+     colors, never cycled). Dark-mode steps only: the app is dark-first. */
+  --tax-roc: #3987e5;
+  --tax-ordinary: #d95926;
+  --tax-qualified: #199e70;
+  --tax-capgains: #c98500;
+  --tax-other: #d55181;
 }
 
 @theme inline {

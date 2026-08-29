@@ -5,6 +5,7 @@ import FundCard from "@/components/fund/FundCard";
 import FilterBar from "@/components/fund/FilterBar";
 import InvestorWarning from "@/components/ui/InvestorWarning";
 import Link from "next/link";
+import { getFundTaxProfile, taxEfficiencySortValue } from "@/lib/tax";
 
 const TICKER_CORRECTIONS: Record<string, string[]> = {
   GIPQ: ["GPIQ"],
@@ -41,6 +42,16 @@ export default async function ExplorePage({ searchParams }: PageProps<"/explore"
         return r.fund.inception_date ? new Date(r.fund.inception_date).getTime() : null;
       case "ticker":
         return null;
+      case "roc_high":
+        return getFundTaxProfile(r.fund.ticker)?.roc_pct ?? null;
+      case "qualified_high":
+        return getFundTaxProfile(r.fund.ticker)?.qualified_dividend_pct ?? null;
+      case "ordinary_low": {
+        const v = getFundTaxProfile(r.fund.ticker)?.ordinary_income_pct;
+        return v != null ? -v : null;
+      }
+      case "tax_efficient":
+        return taxEfficiencySortValue(getFundTaxProfile(r.fund.ticker));
       default:
         return r.metrics?.ttm_yield_pct ?? r.metrics?.distribution_yield_pct ?? null;
     }

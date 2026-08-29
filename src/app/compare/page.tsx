@@ -3,6 +3,8 @@ import { getActiveFunds } from "@/lib/data";
 import { computeFundRatings } from "@/lib/ratings/compute";
 import { formatCompactUsd, formatDate, formatPct } from "@/lib/format";
 import ComparePicker from "@/components/fund/ComparePicker";
+import { getFundTaxProfile, TAX_DISCLAIMER } from "@/lib/tax";
+import type { FundTaxProfile } from "@/lib/types";
 
 interface Row {
   label: string;
@@ -26,10 +28,24 @@ const ROWS: Row[] = [
   { label: "YieldIQ Score", get: (r) => r.yieldIqScore.score, higherIsBetter: true, format: (v) => (v != null ? v.toFixed(1) : "N/A") },
 ];
 
+interface TaxRow {
+  label: string;
+  get: (t: FundTaxProfile | null) => number | null;
+  higherIsBetter: boolean;
+}
+
+const TAX_ROWS: TaxRow[] = [
+  { label: "Return of Capital %", get: (t) => t?.roc_pct ?? null, higherIsBetter: false },
+  { label: "Ordinary Income %", get: (t) => t?.ordinary_income_pct ?? null, higherIsBetter: false },
+  { label: "Qualified Dividend %", get: (t) => t?.qualified_dividend_pct ?? null, higherIsBetter: true },
+  { label: "Capital Gains %", get: (t) => t?.capital_gains_pct ?? null, higherIsBetter: false },
+];
+
 export default async function ComparePage({ searchParams }: PageProps<"/compare">) {
   const sp = await searchParams;
   const tickers = (typeof sp.t === "string" ? sp.t.split(",") : []).filter(Boolean).slice(0, 5);
   const rows = tickers.map((t) => computeFundRatings(t)).filter((r) => r !== null);
+  const taxProfiles = rows.map((r) => getFundTaxProfile(r!.fund.ticker));
   const allFunds = getActiveFunds().sort((a, b) => a.ticker.localeCompare(b.ticker));
 
   return (
@@ -101,6 +117,60 @@ export default async function ComparePage({ searchParams }: PageProps<"/compare"
               </tr>
             </tbody>
           </table>
+        </div>
+      )}
+
+      {rows.length > 0 && (
+        <div className="mt-8">
+          <h2 className="text-lg font-bold">Tax Efficiency</h2>
+          <p className="mt-1 text-xs text-muted">
+            Individual tax situations vary — YieldIQ does not declare a fund &ldquo;best&rdquo;
+            for taxes. Figures below are the most recently reported classification for each
+            fund; see each fund&apos;s Tax tab for the FINAL vs. ESTIMATED status.
+          </p>
+          <div className="card mt-3 overflow-x-auto">
+            <table className="w-full min-w-[720px] text-sm">
+              <thead>
+                <tr className="border-b border-border text-left text-xs text-muted">
+                  <th className="px-3 py-2.5 font-medium">Metric</th>
+                  {rows.map((r) => (
+                    <th key={r!.fund.ticker} className="px-3 py-2.5 text-right font-medium text-foreground">
+                      {r!.fund.ticker}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {TAX_ROWS.map((row) => {
+                  const values = taxProfiles.map((t) => row.get(t));
+                  const numeric = values.filter((v): v is number => v != null);
+                  const best = numeric.length ? (row.higherIsBetter ? Math.max(...numeric) : Math.min(...numeric)) : null;
+                  return (
+                    <tr key={row.label} className="border-t border-border">
+                      <td className="px-3 py-2.5 text-xs text-muted">{row.label}</td>
+                      {values.map((v, i) => (
+                        <td
+                          key={rows[i]!.fund.ticker}
+                          className={`tabular px-3 py-2.5 text-right ${v != null && best != null && v === best ? "font-bold text-accent" : ""}`}
+                        >
+                          {v != null ? formatPct(v, 0) : "Unavailable"}
+                        </td>
+                      ))}
+                    </tr>
+                  );
+                })}
+                <tr className="border-t border-border">
+                  <td className="px-3 py-2.5 text-xs text-muted">Tax Classification Status</td>
+                  {taxProfiles.map((t, i) => (
+                    <td key={rows[i]!.fund.ticker} className="px-3 py-2.5 text-right text-xs uppercase">
+                      {t?.classification_status ? `${t.classification_status}${t.tax_year ? ` · ${t.tax_year}` : ""}` : "Unavailable"}
+                    </td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-[11px] text-muted">{TAX_DISCLAIMER}</p>
         </div>
       )}
     </div>

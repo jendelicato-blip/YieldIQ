@@ -12,7 +12,12 @@
     "other_pct": null,
     "classification_source": null,
     "data_source": "Goldman Sachs Asset Management (via search) / Nasdaq.com",
-    "verification_status": "partially_verified"
+    "verification_status": "partially_verified",
+    "qualified_dividend_pct": null,
+    "short_term_capital_gains_pct": null,
+    "long_term_capital_gains_pct": null,
+    "classification_status": null,
+    "tax_year": null
   },
   {
     "fund_ticker": "ULTI",
@@ -27,7 +32,12 @@
     "other_pct": null,
     "classification_source": null,
     "data_source": "REX Shares (REX IncomeMax Option Strategy ETF) / stockanalysis.com (via search)",
-    "verification_status": "partially_verified"
+    "verification_status": "partially_verified",
+    "qualified_dividend_pct": null,
+    "short_term_capital_gains_pct": null,
+    "long_term_capital_gains_pct": null,
+    "classification_status": null,
+    "tax_year": null
   },
   {
     "fund_ticker": "BTCI",
@@ -42,6 +52,11 @@
     "other_pct": null,
     "classification_source": null,
     "data_source": "NEOS Investments / etfdb.com (via search)",
-    "verification_status": "partially_verified"
+    "verification_status": "partially_verified",
+    "qualified_dividend_pct": null,
+    "short_term_capital_gains_pct": null,
+    "long_term_capital_gains_pct": null,
+    "classification_status": null,
+    "tax_year": null
   }
 ]

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { rankBy } from "@/lib/ratings/rankings";
 import ScreenerTable from "@/components/fund/ScreenerTable";
 import InvestorWarning from "@/components/ui/InvestorWarning";
+import DistinctionBanner from "@/components/ui/DistinctionBanner";
 
 export default function HighYieldPage() {
   const rows = rankBy("yield", 250);
@@ -19,6 +20,9 @@ export default function HighYieldPage() {
       </p>
       <div className="mt-4">
         <InvestorWarning />
+      </div>
+      <div className="mt-4">
+        <DistinctionBanner />
       </div>
       <div className="mt-6">
         <ScreenerTable rows={rows} />

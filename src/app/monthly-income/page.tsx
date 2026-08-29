@@ -3,6 +3,7 @@ import { computeFundRatings } from "@/lib/ratings/compute";
 import ScreenerTable from "@/components/fund/ScreenerTable";
 import IncomeCalculator from "@/components/fund/IncomeCalculator";
 import InvestorWarning from "@/components/ui/InvestorWarning";
+import DistinctionBanner from "@/components/ui/DistinctionBanner";
 
 export default function MonthlyIncomePage() {
   const funds = getActiveFunds().filter((f) => f.distribution_frequency === "monthly");
@@ -27,6 +28,9 @@ export default function MonthlyIncomePage() {
 
       <div className="mt-4">
         <InvestorWarning />
+      </div>
+      <div className="mt-4">
+        <DistinctionBanner />
       </div>
 
       {rows.length > 0 && (

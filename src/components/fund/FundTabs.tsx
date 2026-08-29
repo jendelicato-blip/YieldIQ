@@ -10,6 +10,8 @@ import StarRating from "@/components/ui/StarRating";
 import RatingExplainer from "@/components/fund/RatingExplainer";
 import LineChart from "@/components/charts/LineChart";
 import { STRATEGY_COPY } from "@/lib/strategy-copy";
+import TaxBreakdownSection from "@/components/tax/TaxBreakdownSection";
+import DistinctionBanner from "@/components/ui/DistinctionBanner";
 
 const TABS = [
   "Overview",
@@ -63,7 +65,7 @@ export default function FundTabs({
         {tab === "Holdings" && <Holdings holdings={holdings} fund={fund} />}
         {tab === "Strategy" && <Strategy fund={fund} />}
         {tab === "Risk" && <Risk ratings={ratings} />}
-        {tab === "Tax" && <Tax distributions={distributions} />}
+        {tab === "Tax" && <Tax ticker={fund.ticker} distributions={distributions} ratings={ratings} />}
       </div>
     </div>
   );
@@ -83,6 +85,7 @@ function Overview({ fund, ratings }: { fund: Fund; ratings: ComputedFundRatings 
   const m = ratings.metrics;
   return (
     <div className="space-y-6">
+      <DistinctionBanner />
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatCard label="Price" value={m?.price != null ? formatCurrency(m.price) : "Data unavailable"} />
         <StatCard label="NAV" value={m?.nav != null ? formatCurrency(m.nav) : "Data unavailable"} />
@@ -403,57 +406,59 @@ function Risk({ ratings }: { ratings: ComputedFundRatings }) {
   );
 }
 
-function Tax({ distributions }: { distributions: FundDistribution[] }) {
-  const withClassification = distributions.filter((d) => d.return_of_capital_pct != null);
-  const avgRoc = withClassification.length
-    ? withClassification.reduce((s, d) => s + (d.return_of_capital_pct as number), 0) / withClassification.length
-    : null;
+function Tax({ ticker, distributions, ratings }: { ticker: string; distributions: FundDistribution[]; ratings: ComputedFundRatings }) {
+  const withClassification = distributions.filter(
+    (d) =>
+      d.return_of_capital_pct != null ||
+      d.ordinary_income_pct != null ||
+      d.qualified_dividend_pct != null ||
+      d.capital_gains_pct != null,
+  );
 
   return (
-    <div className="space-y-4">
-      {avgRoc != null && avgRoc >= 50 && (
-        <div className="rounded-xl border border-negative/30 bg-negative/10 p-3 text-sm text-negative">
-          <p className="font-semibold">⚠ HIGH ROC</p>
-          <p className="mt-1">
-            {avgRoc.toFixed(0)}% of recent distributions were classified as Return of Capital.
-            Return of Capital is not automatically bad — but it affects your cost basis and can
-            signal the fund is distributing more than it earns. Understand the tax and NAV impact
-            before relying on this income.
+    <div className="space-y-6">
+      <TaxBreakdownSection
+        ticker={ticker}
+        distributions={distributions}
+        navAnalysis={ratings.navAnalysis}
+        avgRocPct={ratings.avgRocPct}
+      />
+
+      {withClassification.length > 0 && (
+        <div className="card p-4">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted">
+            Classification History
           </p>
-        </div>
-      )}
-      {withClassification.length === 0 ? (
-        <div className="card p-6 text-center text-sm text-muted">Not yet reported.</div>
-      ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[560px] text-sm">
-            <thead>
-              <tr className="text-left text-xs text-muted">
-                <th className="pb-2 font-medium">Ex-Date</th>
-                <th className="pb-2 text-right font-medium">Return of Capital</th>
-                <th className="pb-2 text-right font-medium">Ordinary Income</th>
-                <th className="pb-2 text-right font-medium">Capital Gains</th>
-                <th className="pb-2 text-right font-medium">Other</th>
-              </tr>
-            </thead>
-            <tbody>
-              {withClassification.map((d) => (
-                <tr key={d.ex_date} className="border-t border-border">
-                  <td className="py-2">{formatDate(d.ex_date)}</td>
-                  <td className="tabular py-2 text-right">{formatPct(d.return_of_capital_pct)}</td>
-                  <td className="tabular py-2 text-right">{d.ordinary_income_pct != null ? formatPct(d.ordinary_income_pct) : "—"}</td>
-                  <td className="tabular py-2 text-right">{d.capital_gains_pct != null ? formatPct(d.capital_gains_pct) : "—"}</td>
-                  <td className="tabular py-2 text-right">{d.other_pct != null ? formatPct(d.other_pct) : "—"}</td>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[600px] text-sm">
+              <thead>
+                <tr className="text-left text-xs text-muted">
+                  <th className="pb-2 font-medium">Ex-Date</th>
+                  <th className="pb-2 text-right font-medium">ROC</th>
+                  <th className="pb-2 text-right font-medium">Ordinary</th>
+                  <th className="pb-2 text-right font-medium">Qualified</th>
+                  <th className="pb-2 text-right font-medium">Cap. Gains</th>
+                  <th className="pb-2 text-right font-medium">Other</th>
+                  <th className="pb-2 font-medium">Status</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {withClassification.map((d) => (
+                  <tr key={d.ex_date} className="border-t border-border">
+                    <td className="py-2">{formatDate(d.ex_date)}</td>
+                    <td className="tabular py-2 text-right">{d.return_of_capital_pct != null ? formatPct(d.return_of_capital_pct) : "—"}</td>
+                    <td className="tabular py-2 text-right">{d.ordinary_income_pct != null ? formatPct(d.ordinary_income_pct) : "—"}</td>
+                    <td className="tabular py-2 text-right">{d.qualified_dividend_pct != null ? formatPct(d.qualified_dividend_pct) : "—"}</td>
+                    <td className="tabular py-2 text-right">{d.capital_gains_pct != null ? formatPct(d.capital_gains_pct) : "—"}</td>
+                    <td className="tabular py-2 text-right">{d.other_pct != null ? formatPct(d.other_pct) : "—"}</td>
+                    <td className="py-2 text-xs text-muted uppercase">{d.classification_status ?? "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
-      <p className="text-xs text-muted">
-        Tax information is based on reported fund classifications and may change. This is not
-        personalized tax advice — consult a tax professional.
-      </p>
     </div>
   );
 }

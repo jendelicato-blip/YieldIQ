@@ -4,6 +4,7 @@ import { computeFundRatings } from "@/lib/ratings/compute";
 import FilterBar from "@/components/fund/FilterBar";
 import ScreenerTable from "@/components/fund/ScreenerTable";
 import InvestorWarning from "@/components/ui/InvestorWarning";
+import { getFundTaxProfile, taxEfficiencySortValue } from "@/lib/tax";
 
 export default async function ScreenerPage({ searchParams }: PageProps<"/screener">) {
   const sp = await searchParams;
@@ -43,6 +44,16 @@ export default async function ScreenerPage({ searchParams }: PageProps<"/screene
         return r.risk.score != null ? -r.risk.score : null;
       case "newest":
         return r.fund.inception_date ? new Date(r.fund.inception_date).getTime() : null;
+      case "roc_high":
+        return getFundTaxProfile(r.fund.ticker)?.roc_pct ?? null;
+      case "qualified_high":
+        return getFundTaxProfile(r.fund.ticker)?.qualified_dividend_pct ?? null;
+      case "ordinary_low": {
+        const v = getFundTaxProfile(r.fund.ticker)?.ordinary_income_pct;
+        return v != null ? -v : null;
+      }
+      case "tax_efficient":
+        return taxEfficiencySortValue(getFundTaxProfile(r.fund.ticker));
       default:
         return r.metrics?.ttm_yield_pct ?? r.metrics?.distribution_yield_pct ?? null;
     }
@@ -91,6 +102,12 @@ export default async function ScreenerPage({ searchParams }: PageProps<"/screene
       <div className="mt-4">
         <InvestorWarning compact />
       </div>
+      {sort === "tax_efficient" && (
+        <p className="mt-2 text-xs text-caution">
+          *&ldquo;Most Tax-Efficient&rdquo; ranks by reported qualified dividend % — a common
+          objective proxy, not a personalized recommendation. Individual tax situations vary.
+        </p>
+      )}
 
       <div className="mt-6">
         <ScreenerTable rows={rows} />

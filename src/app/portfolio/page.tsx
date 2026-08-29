@@ -6,6 +6,7 @@ import { getActiveFunds } from "@/lib/data";
 import { computeFundRatings } from "@/lib/ratings/compute";
 import { formatCurrency, formatPct, formatSignedPct } from "@/lib/format";
 import InvestorWarning from "@/components/ui/InvestorWarning";
+import { computeAdjustedBasis, estimateRocReceived, TAX_DISCLAIMER } from "@/lib/tax";
 
 export default function PortfolioPage() {
   const { holdings, add, remove } = usePortfolio();
@@ -34,7 +35,9 @@ export default function PortfolioPage() {
     const unrealizedGainLoss = currentValue != null ? currentValue - costBasis : null;
     const yieldOnCost = yieldPct != null ? (yieldPct * price!) / h.avg_cost : null; // approx using current distribution rate on cost basis
     const estAnnualIncome = yieldPct != null && currentValue != null ? (yieldPct / 100) * currentValue : null;
-    return { holding: h, ratings: r, price, yieldPct, currentValue, costBasis, unrealizedGainLoss, yieldOnCost, estAnnualIncome };
+    const rocReceived = estimateRocReceived(h.ticker, h.shares);
+    const basis = computeAdjustedBasis(costBasis, rocReceived);
+    return { holding: h, ratings: r, price, yieldPct, currentValue, costBasis, unrealizedGainLoss, yieldOnCost, estAnnualIncome, basis };
   });
 
   const totalValue = rows.reduce((s, r) => s + (r.currentValue ?? 0), 0);
@@ -133,6 +136,43 @@ export default function PortfolioPage() {
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {rows.length > 0 && (
+        <div className="mt-10">
+          <h2 className="text-lg font-bold">Tax Basis (Estimated)</h2>
+          <p className="mt-1 text-xs text-muted">
+            ROC Received reflects reported Return of Capital across the distributions YieldIQ
+            has on record for each ticker, not necessarily your full holding period — actual
+            tax basis depends on your individual transactions and tax circumstances. Use your
+            official brokerage records and tax documents for tax reporting.
+          </p>
+          <div className="card mt-3 overflow-x-auto">
+            <table className="w-full min-w-[600px] text-sm">
+              <thead>
+                <tr className="border-b border-border text-left text-xs text-muted">
+                  <th className="px-3 py-2.5 font-medium">Ticker</th>
+                  <th className="px-3 py-2.5 text-right font-medium">Original Cost Basis</th>
+                  <th className="px-3 py-2.5 text-right font-medium">ROC Received</th>
+                  <th className="px-3 py-2.5 text-right font-medium">Est. Adjusted Basis</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((r) => (
+                  <tr key={r.holding.id} className="border-t border-border">
+                    <td className="px-3 py-2 font-semibold">{r.holding.ticker}</td>
+                    <td className="tabular px-3 py-2 text-right">{formatCurrency(r.basis.originalCost)}</td>
+                    <td className="tabular px-3 py-2 text-right">
+                      {r.basis.rocReceived > 0 ? formatCurrency(r.basis.rocReceived) : "Not yet reported"}
+                    </td>
+                    <td className="tabular px-3 py-2 text-right font-semibold">{formatCurrency(r.basis.adjustedBasis)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-[11px] text-muted">{TAX_DISCLAIMER}</p>
         </div>
       )}
     </div>
