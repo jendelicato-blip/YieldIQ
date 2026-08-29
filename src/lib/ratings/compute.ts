@@ -3,8 +3,8 @@
 // needs in one call. This is the one place page components should call into
 // — it guarantees every page uses identical math.
 
-import { getActiveFunds, getAvgRocPct, getDistributions, getFundByTicker, getLatestMetrics, getManagerBySlug, getNavHistory } from "@/lib/data";
-import { computeAllPeriodReturns, computeNavAnalysis } from "@/lib/performance";
+import { getActiveFunds, getAvgRocPct, getDistributions, getFundByTicker, getLatestMetrics, getManagerBySlug, getNavHistory, getReportedReturns } from "@/lib/data";
+import { computeAllPeriodReturns, computeNavAnalysis, mergeWithReportedReturns } from "@/lib/performance";
 import {
   computeDistributionSustainability,
   computeIncomeQualityScore,
@@ -61,7 +61,8 @@ export function computeFundRatings(ticker: string): ComputedFundRatings | null {
   const avgRocPct = getAvgRocPct(ticker);
 
   const navAnalysis = computeNavAnalysis(navHistory);
-  const periodReturns = computeAllPeriodReturns(navHistory, distributions, fund.inception_date);
+  const computedPeriodReturns = computeAllPeriodReturns(navHistory, distributions, fund.inception_date);
+  const periodReturns = mergeWithReportedReturns(computedPeriodReturns, getReportedReturns(ticker));
   const oneYear = periodReturns.find((p) => p.period === "1Y") ?? null;
   const totalReturn1YPct = oneYear?.totalReturnReinvestedPct ?? oneYear?.totalReturnPct ?? null;
   const priceReturn1YPct = oneYear?.priceReturnPct ?? null;

@@ -216,6 +216,28 @@ export interface Alert {
   created_at: string;
 }
 
+// ---- Issuer/data-provider reported trailing returns ----------------------
+//
+// A fallback to computePeriodReturn's NAV-history-derived figures, for
+// periods where YieldIQ hasn't yet accumulated enough daily snapshots.
+// These are numbers a fund's own fact sheet or a market-data provider
+// publishes directly (e.g. "6-Month Total Return: 12.4%") rather than
+// something YieldIQ derives from a price series — always labeled as
+// "reported" in the UI, never presented as if it were computed in-house.
+
+export type ReportedReturnPeriod = "1M" | "3M" | "6M" | "YTD" | "1Y" | "3Y" | "5Y" | "SI";
+
+export interface FundReportedReturn {
+  fund_ticker: string;
+  period: ReportedReturnPeriod;
+  as_of_date: string;
+  price_return_pct: number | null;
+  total_return_pct: number | null; // distributions reinvested, when the source publishes it separately
+  source_name: string | null;
+  source_url: string | null;
+  verification_status: VerificationStatus;
+}
+
 // ---- Composite view model used throughout the UI ------------------------
 
 export interface FundView {

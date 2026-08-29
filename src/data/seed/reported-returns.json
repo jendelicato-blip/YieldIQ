@@ -1,0 +1,312 @@
+[
+  {
+    "fund_ticker": "JEPI",
+    "period": "YTD",
+    "as_of_date": "2026-08-07",
+    "price_return_pct": null,
+    "total_return_pct": 5.46,
+    "source_name": "Total Real Returns (totalrealreturns.com), dividends reinvested",
+    "source_url": "https://totalrealreturns.com/n/JEPI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "JEPI",
+    "period": "1Y",
+    "as_of_date": "2026-08-07",
+    "price_return_pct": null,
+    "total_return_pct": 11.59,
+    "source_name": "Total Real Returns (totalrealreturns.com), dividends reinvested",
+    "source_url": "https://totalrealreturns.com/n/JEPI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "JEPI",
+    "period": "SI",
+    "as_of_date": "2026-08-07",
+    "price_return_pct": null,
+    "total_return_pct": 96.12,
+    "source_name": "Total Real Returns (totalrealreturns.com), dividends reinvested",
+    "source_url": "https://totalrealreturns.com/n/JEPI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "JEPQ",
+    "period": "3M",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 1.2,
+    "source_name": "JPMorgan Asset Management JEPQ fact sheet (NAV cumulative total return)",
+    "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/literature/fact-sheet/etfs/FS-JEPQ.PDF",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "JEPQ",
+    "period": "6M",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 3.6,
+    "source_name": "JPMorgan Asset Management JEPQ fact sheet (NAV cumulative total return)",
+    "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/literature/fact-sheet/etfs/FS-JEPQ.PDF",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "JEPQ",
+    "period": "1Y",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 17.7,
+    "source_name": "JPMorgan Asset Management JEPQ fact sheet (NAV cumulative total return)",
+    "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/literature/fact-sheet/etfs/FS-JEPQ.PDF",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "JEPQ",
+    "period": "SI",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 15.6,
+    "source_name": "JPMorgan Asset Management JEPQ fact sheet (NAV cumulative total return)",
+    "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/literature/fact-sheet/etfs/FS-JEPQ.PDF",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIX",
+    "period": "3M",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 4.5,
+    "source_name": "Goldman Sachs Asset Management (GSAM) GPIX monthly fact card, cumulative return",
+    "source_url": "https://www.gsam.com/content/dam/gsam/pdfs/us/en/fund-literature/monthly-fact-card/GPIX_fc.pdf",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIX",
+    "period": "6M",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 8.5,
+    "source_name": "Goldman Sachs Asset Management (GSAM) GPIX monthly fact card, cumulative return",
+    "source_url": "https://www.gsam.com/content/dam/gsam/pdfs/us/en/fund-literature/monthly-fact-card/GPIX_fc.pdf",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIX",
+    "period": "1Y",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 19.5,
+    "source_name": "Goldman Sachs Asset Management (GSAM) GPIX monthly fact card, cumulative return",
+    "source_url": "https://www.gsam.com/content/dam/gsam/pdfs/us/en/fund-literature/monthly-fact-card/GPIX_fc.pdf",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIX",
+    "period": "SI",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 21.7,
+    "source_name": "Goldman Sachs Asset Management (GSAM) GPIX monthly fact card, cumulative return",
+    "source_url": "https://www.gsam.com/content/dam/gsam/pdfs/us/en/fund-literature/monthly-fact-card/GPIX_fc.pdf",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIQ",
+    "period": "3M",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 3.1,
+    "source_name": "Goldman Sachs Asset Management (GSAM) GPIQ monthly fact card, cumulative return",
+    "source_url": "https://www.gsam.com/content/dam/gsam/pdfs/us/en/fund-literature/monthly-fact-card/GPIQ_fc.pdf",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIQ",
+    "period": "6M",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 9.9,
+    "source_name": "Goldman Sachs Asset Management (GSAM) GPIQ monthly fact card, cumulative return",
+    "source_url": "https://www.gsam.com/content/dam/gsam/pdfs/us/en/fund-literature/monthly-fact-card/GPIQ_fc.pdf",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIQ",
+    "period": "1Y",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 22.3,
+    "source_name": "Goldman Sachs Asset Management (GSAM) GPIQ monthly fact card, cumulative return",
+    "source_url": "https://www.gsam.com/content/dam/gsam/pdfs/us/en/fund-literature/monthly-fact-card/GPIQ_fc.pdf",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIQ",
+    "period": "SI",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 24.1,
+    "source_name": "Goldman Sachs Asset Management (GSAM) GPIQ monthly fact card, cumulative return",
+    "source_url": "https://www.gsam.com/content/dam/gsam/pdfs/us/en/fund-literature/monthly-fact-card/GPIQ_fc.pdf",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "YMAX",
+    "period": "YTD",
+    "as_of_date": "2026-08-25",
+    "price_return_pct": null,
+    "total_return_pct": 4.75,
+    "source_name": "Total Real Returns (totalrealreturns.com), dividends reinvested",
+    "source_url": "https://totalrealreturns.com/n/YMAX",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "YMAX",
+    "period": "1Y",
+    "as_of_date": "2026-08-25",
+    "price_return_pct": null,
+    "total_return_pct": 1.25,
+    "source_name": "Total Real Returns (totalrealreturns.com), dividends reinvested",
+    "source_url": "https://totalrealreturns.com/n/YMAX",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "YMAG",
+    "period": "6M",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": -7.03,
+    "source_name": "stockanalysis.com (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/ymag/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "YMAG",
+    "period": "1Y",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": 10.85,
+    "source_name": "stockanalysis.com (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/ymag/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "ULTY",
+    "period": "6M",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": -18.53,
+    "source_name": "stockanalysis.com / aggregated fund performance data (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/ulty/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "ULTY",
+    "period": "1Y",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": -0.81,
+    "source_name": "stockanalysis.com / aggregated fund performance data (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/ulty/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "FEPI",
+    "period": "1Y",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": 15.31,
+    "source_name": "stockanalysis.com (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/fepi/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "AIPI",
+    "period": "1Y",
+    "as_of_date": "2026-06-15",
+    "price_return_pct": null,
+    "total_return_pct": 32.29,
+    "source_name": "Yahoo Finance (AIPI performance page)",
+    "source_url": "https://finance.yahoo.com/quote/AIPI/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CEPI",
+    "period": "1Y",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": 21.02,
+    "source_name": "stockanalysis.com (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/cepi/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "NVII",
+    "period": "1Y",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": 19.14,
+    "source_name": "stockanalysis.com (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/nvii/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "WMTI",
+    "period": "6M",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": 1.52,
+    "source_name": "stockanalysis.com / aggregated fund performance data (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/wmti/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "WMTI",
+    "period": "1Y",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": 12.77,
+    "source_name": "stockanalysis.com / aggregated fund performance data (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/wmti/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "ULTI",
+    "period": "6M",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": -18.15,
+    "source_name": "Yahoo Finance (ULTI performance page) / aggregated fund performance data (as-of date approximate (day not specified by source))",
+    "source_url": "https://finance.yahoo.com/quote/ULTI/performance",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "ULTI",
+    "period": "1Y",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": -17.69,
+    "source_name": "Yahoo Finance (ULTI performance page) / aggregated fund performance data (as-of date approximate (day not specified by source))",
+    "source_url": "https://finance.yahoo.com/quote/ULTI/performance",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SPYI",
+    "period": "YTD",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": 9.18,
+    "source_name": "stockanalysis.com (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/spyi/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SPYI",
+    "period": "1Y",
+    "as_of_date": "2026-08-01",
+    "price_return_pct": null,
+    "total_return_pct": 17.5,
+    "source_name": "stockanalysis.com (as-of date approximate (day not specified by source))",
+    "source_url": "https://stockanalysis.com/etf/spyi/",
+    "verification_status": "partially_verified"
+  }
+]

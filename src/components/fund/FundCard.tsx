@@ -5,7 +5,14 @@ import { formatPct } from "@/lib/format";
 import { FrequencyBadge } from "@/components/ui/Badges";
 import StarRating from "@/components/ui/StarRating";
 
-export default function FundCard({ r }: { r: ComputedFundRatings }) {
+export default function FundCard({
+  r,
+  highlight,
+}: {
+  r: ComputedFundRatings;
+  /** Surfaces the specific metric this card is being ranked/shown by (e.g. "6M Total Return: +9.9%"), so a ranked list is self-explanatory without clicking through. */
+  highlight?: { label: string; value: string; tone?: "positive" | "negative" | "neutral" };
+}) {
   const manager = getManagerBySlug(r.fund.manager_slug);
   const yieldPct = r.metrics?.ttm_yield_pct ?? r.metrics?.distribution_yield_pct ?? null;
 
@@ -51,6 +58,19 @@ export default function FundCard({ r }: { r: ComputedFundRatings }) {
           </p>
         </div>
       </div>
+
+      {highlight && (
+        <div className="mt-3 flex items-center justify-between rounded-lg bg-surface-2 px-2 py-2">
+          <span className="text-[10px] uppercase tracking-wide text-muted">{highlight.label}</span>
+          <span
+            className={`tabular text-sm font-bold ${
+              highlight.tone === "positive" ? "text-positive" : highlight.tone === "negative" ? "text-negative" : "text-foreground"
+            }`}
+          >
+            {highlight.value}
+          </span>
+        </div>
+      )}
 
       <div className="mt-3 flex items-center justify-between">
         <StarRating value={r.incomeQuality.stars} size={13} showValue={false} />

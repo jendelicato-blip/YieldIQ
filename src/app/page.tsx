@@ -46,7 +46,13 @@ function EmptyState({ message }: { message: string }) {
   );
 }
 
-function CardRow({ items }: { items: ReturnType<typeof rankBy> }) {
+function CardRow({
+  items,
+  highlight,
+}: {
+  items: ReturnType<typeof rankBy>;
+  highlight?: (r: ReturnType<typeof rankBy>[number]) => { label: string; value: string; tone?: "positive" | "negative" | "neutral" } | undefined;
+}) {
   if (items.length === 0) {
     return (
       <EmptyState message="Building verified history for this ranking — check back as daily data accumulates." />
@@ -55,10 +61,28 @@ function CardRow({ items }: { items: ReturnType<typeof rankBy> }) {
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((r) => (
-        <FundCard key={r.fund.ticker} r={r} />
+        <FundCard key={r.fund.ticker} r={r} highlight={highlight?.(r)} />
       ))}
     </div>
   );
+}
+
+function sixMonthHighlight(r: ReturnType<typeof rankBy>[number]) {
+  const p = r.periodReturns.find((p) => p.period === "6M");
+  const value = p?.totalReturnReinvestedPct ?? p?.totalReturnPct;
+  if (value == null) return undefined;
+  const reported = p?.source === "reported";
+  const tone: "positive" | "negative" | "neutral" = value > 0 ? "positive" : value < 0 ? "negative" : "neutral";
+  return {
+    label: `6M Total Return${reported ? " (reported)" : ""}`,
+    value: `${value > 0 ? "+" : ""}${value.toFixed(1)}%`,
+    tone,
+  };
+}
+
+function yieldIqScoreHighlight(r: ReturnType<typeof rankBy>[number]) {
+  if (r.yieldIqScore.score == null) return undefined;
+  return { label: "YieldIQ Score", value: r.yieldIqScore.score.toFixed(1) + " / 100", tone: "neutral" as const };
 }
 
 export default function DashboardPage() {
@@ -67,7 +91,7 @@ export default function DashboardPage() {
 
   const highestYield = rankBy("yield", 4);
   const bestNavGrowth = rankBy("nav_growth", 4);
-  const bestTotalReturn = rankBy("total_return", 4);
+  const bestTotalReturn = rankBy("total_return_6m", 4);
   const bestIncomeQuality = rankBy("income_quality", 4);
   const bestYieldIq = rankBy("yieldiq_score", 8);
   const newest = rankBy("newest", 4);
@@ -113,7 +137,7 @@ export default function DashboardPage() {
         ) : (
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {bestYieldIq.map((r) => (
-              <FundCard key={r.fund.ticker} r={r} />
+              <FundCard key={r.fund.ticker} r={r} highlight={yieldIqScoreHighlight(r)} />
             ))}
           </div>
         )}
@@ -127,8 +151,8 @@ export default function DashboardPage() {
         <CardRow items={bestNavGrowth} />
       </Section>
 
-      <Section title="Best Total Return" subtitle="Price return + distributions, trailing 1 year." href="/screener?sort=total_return">
-        <CardRow items={bestTotalReturn} />
+      <Section title="Best Total Return" subtitle="Price return + distributions, trailing 6 months." href="/screener?sort=total_return">
+        <CardRow items={bestTotalReturn} highlight={sixMonthHighlight} />
       </Section>
 
       <Section title="Best Income Quality" subtitle="Consistency, NAV preservation, ROC prudence, sustainability and more." href="/screener?sort=income_quality">

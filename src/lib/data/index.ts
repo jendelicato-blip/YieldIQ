@@ -13,6 +13,7 @@ import dailyMetricsRaw from "@/data/seed/daily-metrics.json";
 import navHistoryRaw from "@/data/seed/nav-history.json";
 import distributionsRaw from "@/data/seed/distributions.json";
 import holdingsRaw from "@/data/seed/holdings.json";
+import reportedReturnsRaw from "@/data/seed/reported-returns.json";
 
 import type {
   Manager,
@@ -22,6 +23,7 @@ import type {
   FundDistribution,
   FundHolding,
   FundView,
+  FundReportedReturn,
 } from "../types";
 
 const managers = managersRaw as unknown as Manager[];
@@ -30,6 +32,7 @@ const dailyMetrics = dailyMetricsRaw as unknown as FundDailyMetrics[];
 const navHistory = navHistoryRaw as unknown as FundNavHistoryPoint[];
 const distributions = distributionsRaw as unknown as FundDistribution[];
 const holdings = holdingsRaw as unknown as FundHolding[];
+const reportedReturns = reportedReturnsRaw as unknown as FundReportedReturn[];
 
 // ---- Managers --------------------------------------------------------------
 
@@ -120,6 +123,10 @@ export function getFundView(ticker: string): FundView | null {
     distributions: getDistributions(fund.ticker),
     holdings: getHoldings(fund.ticker),
   };
+}
+
+export function getReportedReturns(ticker: string): FundReportedReturn[] {
+  return reportedReturns.filter((r) => r.fund_ticker === ticker);
 }
 
 // ---- Search --------------------------------------------------------------

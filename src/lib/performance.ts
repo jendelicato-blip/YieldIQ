@@ -9,7 +9,7 @@
 // UI) rather than guessing when the underlying NAV/price series doesn't
 // cover the requested period. Nothing here is ever estimated.
 
-import type { FundDistribution, FundNavHistoryPoint } from "./types";
+import type { FundDistribution, FundNavHistoryPoint, FundReportedReturn, ReportedReturnPeriod } from "./types";
 
 export type PerformancePeriod =
   | "1W"
@@ -41,6 +41,14 @@ export interface PeriodReturn {
   totalReturnPct: number | null; // price return + distributions, not reinvested
   totalReturnReinvestedPct: number | null; // using total_return_index if available
   insufficientHistory: boolean;
+  // "computed": derived in-house from YieldIQ's own accumulated daily NAV/
+  // price history. "reported": no such history yet, so this period's
+  // figures were substituted from a fund's own published trailing-return
+  // table (see mergeWithReportedReturns) — always shown labeled as such,
+  // never presented as if YieldIQ computed it.
+  source: "computed" | "reported";
+  reportedSourceName?: string | null;
+  reportedSourceUrl?: string | null;
 }
 
 function daysForPeriod(period: PerformancePeriod, asOf: Date): number | null {
@@ -107,6 +115,7 @@ export function computePeriodReturn(
     totalReturnPct: null,
     totalReturnReinvestedPct: null,
     insufficientHistory: true,
+    source: "computed",
   };
 
   if (verified.length < 2) return empty;
@@ -179,6 +188,7 @@ export function computePeriodReturn(
     totalReturnPct,
     totalReturnReinvestedPct,
     insufficientHistory: false,
+    source: "computed",
   };
 }
 
@@ -189,6 +199,51 @@ export function computeAllPeriodReturns(
 ): PeriodReturn[] {
   const periods: PerformancePeriod[] = ["1W", "1M", "3M", "6M", "YTD", "1Y", "3Y", "5Y", "SI"];
   return periods.map((p) => computePeriodReturn(p, navHistory, distributions, inceptionDate));
+}
+
+// Maps a computed-engine period to the reported-return schema's period keys
+// (which don't include "1W" — fact sheets essentially never publish that).
+const REPORTED_PERIOD_MAP: Partial<Record<PerformancePeriod, ReportedReturnPeriod>> = {
+  "1M": "1M",
+  "3M": "3M",
+  "6M": "6M",
+  YTD: "YTD",
+  "1Y": "1Y",
+  "3Y": "3Y",
+  "5Y": "5Y",
+  SI: "SI",
+};
+
+/**
+ * Fills in periods where YieldIQ's own accumulated history is insufficient
+ * with a fund's own reported trailing return, if one was verified. Never
+ * overwrites a real computed figure — reported data is strictly a fallback
+ * for gaps, and every substituted period is tagged source: "reported" so
+ * the UI can attribute it distinctly from YieldIQ's own calculation.
+ */
+export function mergeWithReportedReturns(
+  computed: PeriodReturn[],
+  reported: FundReportedReturn[],
+): PeriodReturn[] {
+  return computed.map((c) => {
+    if (!c.insufficientHistory) return c;
+    const reportedPeriod = REPORTED_PERIOD_MAP[c.period];
+    if (!reportedPeriod) return c;
+    const match = reported.find((r) => r.period === reportedPeriod);
+    if (!match || (match.price_return_pct == null && match.total_return_pct == null)) return c;
+
+    return {
+      period: c.period,
+      priceReturnPct: match.price_return_pct,
+      distributionReturnPct: null, // not separable from a single reported total-return figure
+      totalReturnPct: match.total_return_pct,
+      totalReturnReinvestedPct: match.total_return_pct,
+      insufficientHistory: false,
+      source: "reported",
+      reportedSourceName: match.source_name,
+      reportedSourceUrl: match.source_url,
+    };
+  });
 }
 
 // ---- NAV analysis ---------------------------------------------------------

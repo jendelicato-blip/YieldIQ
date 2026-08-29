@@ -90,7 +90,11 @@ for that one tag and where the process happens to execute.
 
 1. **Fetch** — for each active fund, pull price/NAV/yield/AUM/expense ratio, dividend
    history, and price history from Financial Modeling Prep (see `docs/DATA_SOURCES.md` for
-   the broader source hierarchy this should widen to in production).
+   the broader source hierarchy this should widen to in production). The historical-price
+   fetch alone pulls ~400 days per run, which is what lets multi-period rankings ("Best 6-Month
+   Total Return" and similar) light up from real computed data after just a couple of
+   successful weekly runs — see "Computed vs. reported period returns" in `docs/RATINGS.md`
+   for how that interacts with the `reported-returns.json` bootstrap dataset.
 2. **No data loss on failure** — a ticker whose fetch fails keeps its previously stored,
    verified rows exactly as they were; it is recorded in that run's `errors` list, never
    silently dropped or replaced with a guess. `upsertByKey` only overwrites the specific

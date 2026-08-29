@@ -12,6 +12,26 @@ below 40%, the whole rating is withheld and shown as "Insufficient history" inst
 number built mostly on missing data. Tap "Why this rating?" on any fund page to see exactly
 which components were used and which were excluded.
 
+## Computed vs. reported period returns
+
+`computePeriodReturn` derives every period's price/total return from YieldIQ's own accumulated
+daily NAV/price history (`fund_nav_history`). Until enough history has accumulated — most
+funds start with a single verified snapshot — many periods (6M, 1Y, ...) legitimately come
+back "Insufficient history." Rather than leave those blank forever while daily snapshots slowly
+build up, `mergeWithReportedReturns` (`src/lib/performance.ts`) fills only the periods still
+missing with a fund's own **reported** trailing return — a figure published on the fund's fact
+sheet or by a market-data provider, captured with its `source_name`/`source_url`/`as_of_date`
+into `src/data/seed/reported-returns.json`. It never overwrites a real computed figure, and
+every `PeriodReturn` carries `source: "computed" | "reported"` so the UI (the Performance tab's
+Source column) always shows which one a number is — the two are never blended into one
+number.
+
+This fallback is self-obsoleting: once the weekly update job (`docs/ARCHITECTURE.md`) has run
+successfully even a couple of times against a real market-data API, `fund_nav_history` holds
+enough real daily points (FMP's historical-price fetch alone pulls ~400 days per run) that
+`computePeriodReturn` starts resolving every standard period on its own — the reported fallback
+then simply stops triggering for that fund, with no code change required.
+
 ## NAV Growth Rating (1–5 ★)
 
 **Explicitly not a function of yield.** Built only from NAV history:

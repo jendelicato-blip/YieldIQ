@@ -257,6 +257,7 @@ function Performance({ ratings }: { ratings: ComputedFundRatings }) {
               <th className="pb-2 text-right font-medium">Distribution Return</th>
               <th className="pb-2 text-right font-medium">Total Return</th>
               <th className="pb-2 text-right font-medium">Total Return (reinvested)</th>
+              <th className="pb-2 text-right font-medium">Source</th>
             </tr>
           </thead>
           <tbody>
@@ -267,11 +268,33 @@ function Performance({ ratings }: { ratings: ComputedFundRatings }) {
                 <td className="py-2 text-right"><ReturnValue value={p.distributionReturnPct} /></td>
                 <td className="py-2 text-right"><ReturnValue value={p.totalReturnPct} /></td>
                 <td className="py-2 text-right"><ReturnValue value={p.totalReturnReinvestedPct} /></td>
+                <td className="py-2 text-right">
+                  {p.source === "reported" ? (
+                    <span
+                      className="rounded-full bg-info/15 px-2 py-0.5 text-[10px] font-semibold text-info"
+                      title={p.reportedSourceName ? `Reported by ${p.reportedSourceName}` : "Issuer/data-provider reported"}
+                    >
+                      Reported
+                    </span>
+                  ) : p.insufficientHistory ? (
+                    <span className="text-[10px] text-muted">—</span>
+                  ) : (
+                    <span className="rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-semibold text-accent">
+                      Computed
+                    </span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      <p className="text-[11px] text-muted">
+        &ldquo;Computed&rdquo; periods are derived from YieldIQ&apos;s own accumulated daily NAV/price
+        history. &ldquo;Reported&rdquo; periods are substituted from a fund&apos;s own published
+        trailing-return figures where YieldIQ hasn&apos;t yet accumulated enough history — never
+        blended with computed figures, and always attributed to their source.
+      </p>
     </div>
   );
 }

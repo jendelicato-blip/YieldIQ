@@ -16,11 +16,17 @@ function headlineYield(r: ComputedFundRatings): number | null {
   return r.metrics?.ttm_yield_pct ?? r.metrics?.distribution_yield_pct ?? null;
 }
 
+function totalReturnFor(r: ComputedFundRatings, period: "6M" | "1Y"): number | null {
+  const p = r.periodReturns.find((p) => p.period === period);
+  return p?.totalReturnReinvestedPct ?? p?.totalReturnPct ?? null;
+}
+
 export function rankBy(
   key:
     | "yield"
     | "nav_growth"
     | "total_return"
+    | "total_return_6m"
     | "income_quality"
     | "risk_low"
     | "yieldiq_score"
@@ -42,12 +48,13 @@ export function rankBy(
       rows.sort((a, b) => (b.navGrowth.score as number) - (a.navGrowth.score as number));
       break;
     case "total_return": {
-      const tr = (r: ComputedFundRatings) => {
-        const p = r.periodReturns.find((p) => p.period === "1Y");
-        return p?.totalReturnReinvestedPct ?? p?.totalReturnPct ?? null;
-      };
-      rows = rows.filter((r) => tr(r) != null);
-      rows.sort((a, b) => (tr(b) as number) - (tr(a) as number));
+      rows = rows.filter((r) => totalReturnFor(r, "1Y") != null);
+      rows.sort((a, b) => (totalReturnFor(b, "1Y") as number) - (totalReturnFor(a, "1Y") as number));
+      break;
+    }
+    case "total_return_6m": {
+      rows = rows.filter((r) => totalReturnFor(r, "6M") != null);
+      rows.sort((a, b) => (totalReturnFor(b, "6M") as number) - (totalReturnFor(a, "6M") as number));
       break;
     }
     case "income_quality":
