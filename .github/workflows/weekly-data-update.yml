@@ -1,0 +1,60 @@
+name: Weekly Data Update
+
+# Runs the same update engine as the in-app "↻ UPDATE DATA" button
+# (scripts/ingest/fetch_daily_fmp.mjs), tagged as an "automatic" run, once
+# every 7 days. Per YieldIQ's data-update policy, the database does NOT
+# refresh automatically more than once a week — a user can always force an
+# immediate comprehensive update from the app itself, which does not affect
+# or reset this schedule.
+#
+# Fridays at 22:00 UTC. Adjust the cron below if you want a different day;
+# keep it to once weekly.
+#
+# Required repo secret: FMP_API_KEY (Settings → Secrets and variables →
+# Actions → New repository secret). Without it, the job fails fast rather
+# than fabricating a "successful" run.
+
+on:
+  schedule:
+    - cron: "0 22 * * 5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-data-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run update engine
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+          UPDATE_TRIGGER: automatic
+        run: |
+          if [ -z "$FMP_API_KEY" ]; then
+            echo "::error::FMP_API_KEY repo secret is not set. Add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          node scripts/ingest/fetch_daily_fmp.mjs
+
+      - name: Commit updated data, if any
+        run: |
+          git config user.name "yieldiq-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/data/seed/
+          if git diff --cached --quiet; then
+            echo "No data changes this run."
+          else
+            git commit -m "Weekly automatic data update ($(date -u +%Y-%m-%d))"
+            git push
+          fi
