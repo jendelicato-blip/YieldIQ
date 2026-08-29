@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { getActiveFunds, getManagers } from "@/lib/data";
-import { rankBy, getDataFreshness } from "@/lib/ratings/rankings";
+import { rankBy } from "@/lib/ratings/rankings";
 import FundCard from "@/components/fund/FundCard";
 import InvestorWarning from "@/components/ui/InvestorWarning";
-import { formatDateTime } from "@/lib/format";
+import UpdateStatusCard from "@/components/admin/UpdateStatusCard";
 
-export const dynamic = "force-static";
-export const revalidate = 3600;
+// Dynamic (not statically cached): the "↻ UPDATE DATA" button's effect —
+// fresh update-history.json / seed data written to disk — must show up on
+// the next render without a rebuild. See docs/ARCHITECTURE.md for the
+// tradeoffs of the current JSON-file-as-database interim architecture.
+export const dynamic = "force-dynamic";
 
 function Section({
   title,
@@ -61,7 +64,6 @@ function CardRow({ items }: { items: ReturnType<typeof rankBy> }) {
 export default function DashboardPage() {
   const funds = getActiveFunds();
   const managers = getManagers();
-  const asOf = getDataFreshness();
 
   const highestYield = rankBy("yield", 4);
   const bestNavGrowth = rankBy("nav_growth", 4);
@@ -90,16 +92,12 @@ export default function DashboardPage() {
             <p className="text-2xl font-bold tabular">{managers.length}</p>
             <p className="text-xs text-muted">Managers tracked</p>
           </div>
-          <div className="card px-4 py-3">
-            <p className="text-2xl font-bold tabular">{asOf ?? "—"}</p>
-            <p className="text-xs text-muted">Data as of</p>
-          </div>
         </div>
-        <p className="mt-3 text-xs text-muted">
-          Data updated: {asOf ? formatDateTime(asOf + "T18:00:00-04:00") : "not yet available"}.
-          Verification status is shown on every figure — see any fund page for sources.
-        </p>
       </section>
+
+      <div className="mt-6">
+        <UpdateStatusCard />
+      </div>
 
       <div className="mt-6">
         <InvestorWarning />

@@ -59,28 +59,77 @@ Postgres. Migrating to Supabase means:
 3. Replace the JSON imports in `src/lib/data/index.ts` with Supabase queries. No other file
    changes.
 
-## Daily update pipeline (design)
+## Update model: weekly automatic + on-demand manual
 
-Production ingestion runs once per trading day (target: after market close, ~6:00 PM ET) as a
-scheduled job (Supabase Edge Function + `pg_cron`, or an external scheduler hitting an API
-route):
+**The database does not refresh continuously.** A comprehensive update (every tracked
+manager, every fund, prices, yields, distributions, NAV, performance, tax info, expense
+ratios, AUM, holdings, and a full ratings recompute) runs automatically **once every 7
+days**, never daily and never more than once a week on its own. A user can force an
+immediate, full update at any time via the "↻ UPDATE DATA" button — it does not wait for or
+reset the weekly schedule; the two are independent.
 
-1. **Fetch** — for each active fund, pull price/NAV/yield/AUM/expense ratio from the issuer's
-   API or fact sheet first, falling back down the hierarchy in `docs/DATA_SOURCES.md`.
-2. **Validate** — reject implausible deltas (e.g. AUM swinging >50% day-over-day without a
-   known corporate action) and flag for manual review instead of writing bad data.
-3. **Upsert** — insert one `fund_daily_metrics` row per fund per day (never overwrite
-   history), append `fund_nav_history` and `fund_distributions` rows as new data appears, and
-   set `verification_status` based on source agreement (`verified` when the primary source
-   confirms; `partially_verified` when only a secondary source responded; `stale` when a
-   fetch fails and the last known row ages past its freshness window).
-4. **Recompute** — re-run the rating engine for every fund whose inputs changed, writing a new
-   `fund_ratings` row (ratings are always recomputed from raw history, never hand-edited).
-5. **Diff** — compare today's snapshot to yesterday's and write `daily_change_events` rows for
-   the "What's Changed?" feed (yield changes, NAV moves, new distributions, new funds, large
-   moves, distribution changes, new ROC disclosures).
-6. **Alert evaluation** — scan `user_alerts` against the new snapshot and fire notifications
-   for any matched, active alert.
+- **Automatic (weekly)** — `.github/workflows/weekly-data-update.yml`, a GitHub Actions cron
+  job (Fridays 22:00 UTC + `workflow_dispatch` for an on-demand CI run) that runs the update
+  engine out-of-process and commits any changed seed data back to the repo. This is the
+  mechanism precisely because a real production deployment of this JSON-file-as-database
+  architecture is typically serverless (read-only filesystem, no persistent long-running
+  process to host a scheduler) — see "Persistence caveat" below.
+- **Manual (on-demand)** — `POST /api/update-data` (`src/app/api/update-data/route.ts`), the
+  backend for the in-app button. Runs the identical engine in-process, tagged
+  `update_type: "manual"`. Guarded by an in-memory lock so a double-click can't start two
+  overlapping runs; otherwise never blocked or cooldown-throttled — the user can always force
+  a fresh update. The engine itself skips re-fetching a ticker whose data was verified in the
+  last 5 minutes (cheap "don't hammer an identical fetch" behavior), which is not the same as
+  blocking the button.
+
+Both paths call the same function — `runUpdate({ triggeredBy })` in
+`scripts/ingest/fetch_daily_fmp.mjs` — so "automatic" and "manual" runs are identical except
+for that one tag and where the process happens to execute.
+
+### What one update run does
+
+1. **Fetch** — for each active fund, pull price/NAV/yield/AUM/expense ratio, dividend
+   history, and price history from Financial Modeling Prep (see `docs/DATA_SOURCES.md` for
+   the broader source hierarchy this should widen to in production).
+2. **No data loss on failure** — a ticker whose fetch fails keeps its previously stored,
+   verified rows exactly as they were; it is recorded in that run's `errors` list, never
+   silently dropped or replaced with a guess. `upsertByKey` only overwrites the specific
+   dated rows a successful fetch produced.
+3. **Diff, not just fetch** — every run compares freshly-fetched values against the
+   previously stored ones and emits a `ChangeEvent` (`src/lib/ingest/types.ts`) for anything
+   that actually moved: yield changes (≥0.5pp), a genuinely new distribution vs. the prior
+   one on file, expense ratio / AUM changes, and NAV alerts (≥5% 1-month move, ≥10% 3-month
+   move, or a ≥20% drawdown from peak — a magnitude-based flag, distinct from and simpler
+   than the fund-page NAV Decay Alert rating). New-fund discovery, tax/ROC classification
+   updates, strategy changes, ticker changes, and fund closures are fully wired into the type
+   system and UI, but always emit zero events today — YieldIQ has no real detection source
+   for any of them yet (FMP's dividend feed has no 19a-1 tax classification, and there's no
+   discovery/filing feed wired up), so they stay honestly empty rather than inferred.
+4. **Log** — every run appends one entry to `src/data/seed/update-history.json`
+   (`UpdateHistoryEntry`: date, type, funds scanned, the full `changes[]` array, `errors[]`,
+   and a `status` of `complete` / `partial` / `failed`). The UI's summary counts
+   (funds updated, distribution changes, NAV alerts, …) are always derived by filtering this
+   one array — never stored redundantly — so they can't drift from the detail behind them.
+   `status` is `failed` only when the majority of attempted fetches errored (e.g. no
+   `FMP_API_KEY`, or a real provider outage) — a mostly-successful run with a few errors is
+   `partial`, and the UI shows exactly which tickers failed rather than claiming full success.
+
+### Persistence caveat (current JSON-file architecture)
+
+`fetch_daily_fmp.mjs` writes straight to `src/data/seed/*.json` on disk. That only has a
+visible effect where the filesystem is writable and persistent across requests: local dev, a
+self-hosted/VM/container deployment, or this repo's own CI runner. It does **not** work on a
+typical serverless host (e.g. Vercel) — those deployments serve an immutable, read-only build
+of the repo, so an in-process write from `/api/update-data` has nowhere durable to land. The
+GitHub Action sidesteps this entirely: it runs the same engine somewhere with a normal
+filesystem, commits the result, and relies on the host's usual "redeploy on push" flow to
+publish it — a standard, robust pattern for a "data committed to the repo" site, and it's the
+mechanism this app leans on for the weekly automatic path in any serverless deployment.
+`src/lib/ingest/status.ts` reads `update-history.json` fresh from disk on every call for
+exactly this reason (not a cached static import), so a manual run's effect on the status
+card/history is visible immediately in any environment where the write itself succeeded.
+Migrating to Supabase (below) removes this caveat entirely, since writes become a normal
+database call available from any deployment model.
 
 `scripts/ingest/` contains two implementations:
 
