@@ -1,0 +1,47 @@
+[
+  {
+    "fund_ticker": "GPIX",
+    "ex_date": "2026-08-03",
+    "record_date": null,
+    "pay_date": null,
+    "amount_per_share": 0.3916,
+    "implied_yield_pct": null,
+    "return_of_capital_pct": null,
+    "ordinary_income_pct": null,
+    "capital_gains_pct": null,
+    "other_pct": null,
+    "classification_source": null,
+    "data_source": "Goldman Sachs Asset Management (via search) / Nasdaq.com",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "ULTI",
+    "ex_date": "2026-07-02",
+    "record_date": null,
+    "pay_date": null,
+    "amount_per_share": 0.16,
+    "implied_yield_pct": null,
+    "return_of_capital_pct": null,
+    "ordinary_income_pct": null,
+    "capital_gains_pct": null,
+    "other_pct": null,
+    "classification_source": null,
+    "data_source": "REX Shares (REX IncomeMax Option Strategy ETF) / stockanalysis.com (via search)",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BTCI",
+    "ex_date": "2026-08-21",
+    "record_date": null,
+    "pay_date": null,
+    "amount_per_share": 0.63,
+    "implied_yield_pct": null,
+    "return_of_capital_pct": null,
+    "ordinary_income_pct": null,
+    "capital_gains_pct": null,
+    "other_pct": null,
+    "classification_source": null,
+    "data_source": "NEOS Investments / etfdb.com (via search)",
+    "verification_status": "partially_verified"
+  }
+]

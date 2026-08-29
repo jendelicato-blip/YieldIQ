@@ -1,0 +1,334 @@
+[
+  {
+    "id": "28b8a094-dca7-5dfb-b5bf-c486a49e3dff",
+    "slug": "yieldmax",
+    "name": "YieldMax",
+    "website": "https://www.yieldmaxetfs.com",
+    "founded_year": null,
+    "headquarters": null,
+    "primary_strategies": [
+      "single-stock synthetic covered call",
+      "option income",
+      "fund-of-funds income"
+    ],
+    "notes": "Adviser is affiliated with ZEGA Financial; the YieldMax ETF brand launched its first funds (TSLY) in November 2022 and has since become the largest single-stock option-income ETF family by fund count.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "f38334ce-1846-5b8a-95bb-2f48148fe915",
+    "slug": "graniteshares",
+    "name": "GraniteShares",
+    "website": "https://graniteshares.com",
+    "founded_year": 2016,
+    "headquarters": "New York, New York, US",
+    "primary_strategies": [
+      "leveraged single-stock ETFs",
+      "YieldBOOST synthetic covered call income",
+      "gold and commodity ETPs"
+    ],
+    "notes": "Founded by Will Rhind; the YieldBOOST suite pairs a small leveraged/unlevered stock position with an options overlay for weekly income.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "ced0fc80-0fa8-519b-a477-ec3606b65ff0",
+    "slug": "roundhill",
+    "name": "Roundhill Investments",
+    "website": "https://www.roundhillinvestments.com",
+    "founded_year": 2018,
+    "headquarters": "New York, New York, US",
+    "primary_strategies": [
+      "0DTE index covered call",
+      "WeeklyPay single-stock covered call",
+      "managed distribution"
+    ],
+    "notes": "Founded by Will Hershey and Timothy Maloney; known for pioneering 0DTE (zero-days-to-expiration) covered call ETFs like QDTE and XDTE.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "5ee25cb8-45dc-59d4-9779-f51f223873d2",
+    "slug": "rexshares",
+    "name": "REX Shares",
+    "website": "https://www.rexshares.com",
+    "founded_year": 2014,
+    "headquarters": "Fairfield, Connecticut, US",
+    "primary_strategies": [
+      "single-stock growth & income (covered call)",
+      "diversified equity premium income",
+      "T-REX leveraged/inverse ETFs",
+      "crypto staking (REX-Osprey)"
+    ],
+    "notes": "Also operates the REX-Osprey joint venture for spot-crypto and crypto-staking ETFs.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "6359ba5d-79cf-5aa9-a6d1-ad036c8c102d",
+    "slug": "neos",
+    "name": "NEOS Investments",
+    "website": "https://neosfunds.com",
+    "founded_year": 2022,
+    "headquarters": "Westport, Connecticut, US",
+    "primary_strategies": [
+      "index option income",
+      "tax-efficient covered call/put-write",
+      "boosted (leveraged) option income",
+      "enhanced income fixed income"
+    ],
+    "notes": "Known for a data-driven, tax-aware options approach (SPYI, QQQI) that emphasizes return-of-capital efficiency.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "659cefca-364d-5363-bcfe-e55e4af976c2",
+    "slug": "defiance",
+    "name": "Defiance ETFs",
+    "website": "https://www.defianceetfs.com",
+    "founded_year": 2018,
+    "headquarters": "New York, New York, US",
+    "primary_strategies": [
+      "0DTE/enhanced options income",
+      "target income",
+      "thematic equity"
+    ],
+    "notes": "Led by CEO/CIO Sylvia Jablonski; also known for thematic ETFs outside the income lineup.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "2beb8ed5-3814-5429-838f-7715c25dd663",
+    "slug": "amplify",
+    "name": "Amplify ETFs",
+    "website": "https://amplifyetfs.com",
+    "founded_year": 2014,
+    "headquarters": "Wheaton, Illinois, US",
+    "primary_strategies": [
+      "partial covered call dividend income",
+      "closed-end fund income",
+      "traditional dividend growth"
+    ],
+    "notes": "Founded by Christian Magoon; the CWP-subadvised DIVO/IDVO/QDVO suite uses selective (not 100%) call coverage.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "dd5dcf30-52a9-5f34-9f61-b94a10db9eda",
+    "slug": "kurv",
+    "name": "Kurv Investment Management",
+    "website": "https://www.kurvinvest.com",
+    "founded_year": null,
+    "headquarters": "San Francisco, California, US",
+    "primary_strategies": [
+      "single-stock yield premium (option income)",
+      "precious metals income"
+    ],
+    "notes": "Sources differ on exact founding year (2022 vs 2023); left null pending clearer verification.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "6a99d539-f4cf-59a4-b281-f5ec96c20a9b",
+    "slug": "nicholaswealth",
+    "name": "Nicholas Wealth Management / XFUNDS by Nicholas Wealth",
+    "website": "https://nicholasx.com",
+    "founded_year": 2016,
+    "headquarters": "Marietta, Georgia, US",
+    "primary_strategies": [
+      "global equity + index credit spread income",
+      "crypto income",
+      "precious metals income"
+    ],
+    "notes": "Founded by David Nicholas; the RIA's ETF sub-brand is marketed as \"XFUNDS by Nicholas Wealth.\"",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "fe8ca0d2-c2df-5312-bf49-d66faa8d5aec",
+    "slug": "tappalpha",
+    "name": "TappAlpha",
+    "website": "https://www.tappalphafunds.com",
+    "founded_year": 2023,
+    "headquarters": "Seattle, Washington, US",
+    "primary_strategies": [
+      "daily (0DTE-style) covered call growth & income",
+      "light-leverage income (T2 Lift)"
+    ],
+    "notes": "Operated by Tapp Finance, Inc.; partners with Tuttle Capital on its light-leverage \"T2 Lift\" series.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "8beaf60f-555a-5d38-bae4-05f93994bf32",
+    "slug": "vistashares",
+    "name": "VistaShares",
+    "website": "https://www.vistashares.com",
+    "founded_year": 2024,
+    "headquarters": null,
+    "primary_strategies": [
+      "Target 15 options-overlay income on concentrated/thematic equity baskets"
+    ],
+    "notes": "Founded by Adam Patti (previously founder of IndexIQ), launched with backing from DVx Ventures.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "63be7ae2-e4e9-5b5b-b297-68c1f4527ec3",
+    "slug": "tuttlecapital",
+    "name": "Tuttle Capital Management",
+    "website": "https://www.tuttlecap.com",
+    "founded_year": 2012,
+    "headquarters": "Riverside, Connecticut, US",
+    "primary_strategies": [
+      "leveraged/inverse thematic ETFs",
+      "light-leverage growth & income (with TappAlpha)"
+    ],
+    "notes": "Founded by Matthew Tuttle; one of the most prolific independent ETF issuers by fund count, spanning many strategy types beyond income.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "307c0a40-7e5c-5671-bba7-dc8b50b6cc1e",
+    "slug": "simplify",
+    "name": "Simplify Asset Management",
+    "website": "https://www.simplify.us",
+    "founded_year": 2020,
+    "headquarters": "New York, New York, US",
+    "primary_strategies": [
+      "volatility premium income",
+      "convexity/hedged income",
+      "put/call spread income"
+    ],
+    "notes": "Co-founded by Paul Kim (CEO); SVOL was one of the first ETFs to harvest VIX futures volatility premium with a built-in hedge.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "9e644be3-7ca5-5f9e-ae4d-fe350b19fdbc",
+    "slug": "nestyield",
+    "name": "NestYield",
+    "website": "https://nestyield.com",
+    "founded_year": 2024,
+    "headquarters": null,
+    "primary_strategies": [
+      "concentrated covered call income",
+      "downside-guarded covered call income"
+    ],
+    "notes": "Affiliated with Ramos Capital Group; smaller, newer issuer with a compact income-ETF lineup.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "cf1516fb-8768-5a52-8016-47bfc2abaec6",
+    "slug": "calamos",
+    "name": "Calamos Investments",
+    "website": "https://www.calamos.com",
+    "founded_year": 1977,
+    "headquarters": "Naperville, Illinois, US",
+    "primary_strategies": [
+      "structured protection (buffer) ETFs",
+      "autocallable income",
+      "convertible/closed-end fund income"
+    ],
+    "notes": "Long-established multi-asset manager known for convertible bond expertise; entered the defined-outcome and autocallable-income ETF space more recently.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "d1354445-a144-5efa-96ad-87ac70229b5c",
+    "slug": "grayscale",
+    "name": "Grayscale Investments",
+    "website": "https://grayscale.com",
+    "founded_year": 2013,
+    "headquarters": "Stamford, Connecticut, US",
+    "primary_strategies": [
+      "crypto covered call income",
+      "crypto premium income"
+    ],
+    "notes": "Best known for its spot Bitcoin/Ethereum trusts (GBTC, ETHE); more recently launched covered-call and premium-income ETFs on top of its crypto ETPs.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "64afe870-2707-5cbe-a318-62df955b072b",
+    "slug": "globalx",
+    "name": "Global X ETFs",
+    "website": "https://www.globalxetfs.com",
+    "founded_year": 2008,
+    "headquarters": "New York, New York, US",
+    "primary_strategies": [
+      "index covered call",
+      "covered call & growth (partial coverage)",
+      "traditional dividend/thematic"
+    ],
+    "notes": "Owned by Mirae Asset Global Investments; QYLD (2013) was one of the earliest and largest index covered-call ETFs.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "775c8921-722b-5588-bba5-87dc5e81cd2a",
+    "slug": "jpmorgan",
+    "name": "JPMorgan Asset Management",
+    "website": "https://am.jpmorgan.com",
+    "founded_year": null,
+    "headquarters": "New York, New York, US",
+    "primary_strategies": [
+      "equity premium income (active covered call)",
+      "core bond income"
+    ],
+    "notes": "Asset management arm of JPMorgan Chase; JEPI (2020) and JEPQ (2022) are widely credited with popularizing actively managed equity premium income ETFs among mainstream investors.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "1113753a-2cb1-5733-8f74-60f957be38bc",
+    "slug": "goldmansachs",
+    "name": "Goldman Sachs Asset Management",
+    "website": "https://am.gs.com",
+    "founded_year": null,
+    "headquarters": "New York, New York, US",
+    "primary_strategies": [
+      "equity premium income (dynamic covered call)"
+    ],
+    "notes": "Asset management arm of Goldman Sachs; entered the premium-income ETF category in 2023 with GPIX and GPIQ.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "7a59912d-0a87-52b5-b895-caf4c8fad7fe",
+    "slug": "firsttrust",
+    "name": "First Trust / FT Vest",
+    "website": "https://www.ftportfolios.com",
+    "founded_year": 1991,
+    "headquarters": "Wheaton, Illinois, US",
+    "primary_strategies": [
+      "target outcome / buffer ETFs",
+      "target income (bond + options overlay)"
+    ],
+    "notes": "\"FT Vest\" branding reflects First Trust's sub-advisory partnership with Cboe Vest on its large defined-outcome and target-income ETF suites.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "5e250e2a-3de8-50eb-af59-3405cf09b8c9",
+    "slug": "volatilityshares",
+    "name": "Volatility Shares",
+    "website": "https://www.volatilityshares.com",
+    "founded_year": 2019,
+    "headquarters": "Palm Beach Gardens, Florida, US",
+    "primary_strategies": [
+      "leveraged/inverse VIX futures",
+      "crypto futures leveraged ETFs"
+    ],
+    "notes": "Best known for UVIX/SVIX; primarily a leveraged-and-inverse specialist rather than an option-income issuer, so it has no verified dedicated income-ETF product in this dataset.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "feb7744f-840d-5cd3-a2d4-a7a884d488a9",
+    "slug": "tradr",
+    "name": "Tradr ETFs",
+    "website": "https://www.tradretfs.com",
+    "founded_year": null,
+    "headquarters": null,
+    "primary_strategies": [
+      "single-stock daily-reset leveraged/inverse ETFs"
+    ],
+    "notes": "First-to-market with single-stock leveraged ETFs in mid-2022; its lineup is leveraged/inverse daily-reset products, and no verified option-income (covered call) ETF from Tradr was found, so none are listed in funds.json.",
+    "verification_status": "partially_verified"
+  },
+  {
+    "id": "8bfafee9-2c68-56f7-9f35-957ff1dcfc34",
+    "slug": "leverageshares",
+    "name": "Leverage Shares",
+    "website": "https://leverageshares.com",
+    "founded_year": 2017,
+    "headquarters": "Greenwich, Connecticut, US (also operates from London, UK)",
+    "primary_strategies": [
+      "single-stock leveraged/inverse ETPs (Europe)",
+      "covered call income ETPs (IncomeShares sub-brand, Europe)"
+    ],
+    "notes": "Primarily a European issuer of exchange-traded products (ETPs) listed on the LSE, Euronext, Xetra and Borsa Italiana, not US-listed ETFs; its IncomeShares sub-brand offers covered-call income ETPs (e.g. on gold, NVIDIA) in Europe only.",
+    "verification_status": "partially_verified"
+  }
+]

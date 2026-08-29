@@ -1,0 +1,170 @@
+[
+  {
+    "fund_ticker": "JEPI",
+    "as_of_date": "2026-08-26",
+    "nav": 58.14,
+    "price": 57.79,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "JEPQ",
+    "as_of_date": "2026-08-26",
+    "nav": 59.76,
+    "price": 59.84,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIX",
+    "as_of_date": "2026-08-14",
+    "nav": null,
+    "price": 56.61,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GPIQ",
+    "as_of_date": "2026-08-26",
+    "nav": null,
+    "price": 56.5,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "YMAX",
+    "as_of_date": "2026-08-18",
+    "nav": 7.68,
+    "price": null,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "YMAG",
+    "as_of_date": "2026-08-19",
+    "nav": null,
+    "price": 11.27,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "ULTY",
+    "as_of_date": "2026-08-27",
+    "nav": 26.84,
+    "price": 26.82,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "FEPI",
+    "as_of_date": "2026-05-08",
+    "nav": null,
+    "price": 42.28,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "AIPI",
+    "as_of_date": "2026-08-26",
+    "nav": 36.31,
+    "price": 36.38,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CEPI",
+    "as_of_date": "2026-08-14",
+    "nav": 31.7,
+    "price": 31.69,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "NVII",
+    "as_of_date": "2026-08-24",
+    "nav": null,
+    "price": 23.26,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "WMTI",
+    "as_of_date": "2026-08-24",
+    "nav": 19.56,
+    "price": 19.54,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "QQQI",
+    "as_of_date": "2026-08-28",
+    "nav": null,
+    "price": 54.53,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BTCI",
+    "as_of_date": "2026-08-26",
+    "nav": null,
+    "price": 30.39,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CSHI",
+    "as_of_date": "2026-08-12",
+    "nav": 49.72,
+    "price": 49.67,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BLOX",
+    "as_of_date": "2026-01-02",
+    "nav": 18.41,
+    "price": null,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TMGN",
+    "as_of_date": "2026-08-27",
+    "nav": 24.07,
+    "price": 24.16,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "EGGY",
+    "as_of_date": "2026-08-25",
+    "nav": null,
+    "price": 33.71,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "EGGS",
+    "as_of_date": "2026-07-23",
+    "nav": 37.01,
+    "price": null,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XYLD",
+    "as_of_date": "2026-08-27",
+    "nav": 41.53,
+    "price": 41.64,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "DIVO",
+    "as_of_date": "2026-08-21",
+    "nav": null,
+    "price": 48.57,
+    "total_return_index": null,
+    "verification_status": "partially_verified"
+  }
+]
