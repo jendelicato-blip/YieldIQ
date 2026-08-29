@@ -82,8 +82,28 @@ route):
 6. **Alert evaluation** — scan `user_alerts` against the new snapshot and fire notifications
    for any matched, active alert.
 
-`scripts/ingest/` contains the skeleton for step 1–3 (`fetch_daily.ts`) as a reference
-implementation to build out against a real market-data API.
+`scripts/ingest/` contains two implementations:
+
+- `fetch_daily.ts` — a reference skeleton for steps 1–3 against a **Supabase-backed** store
+  (the long-term production target), with a `fetchQuote()` stub to fill in against whichever
+  provider you deploy with.
+- `fetch_daily_fmp.mjs` — a **concrete, runnable** implementation against the
+  [Financial Modeling Prep](https://financialmodelingprep.com) API, writing directly into
+  today's seed-JSON store (`src/data/seed/`). Run it with `FMP_API_KEY` set (env var or
+  `.env.local`) via `npm run ingest:fmp`. It fetches, per active fund: a live quote, ETF info
+  (NAV/AUM/expense ratio), full dividend history, and ~400 days of historical price (used both
+  as NAV/price history and, via FMP's dividend-adjusted close, a total-return index for the
+  performance engine). It only ever appends new dated observations or upserts today's row —
+  never rewrites or fabricates history — and stamps every row `verification_status: "verified"`
+  with `data_source: "Financial Modeling Prep API"`.
+
+  This script cannot run inside a network-restricted development sandbox (outbound access to
+  data-provider domains is commonly blocked there) — run it wherever ingestion is actually
+  scheduled: a local machine, a GitHub Action, a Vercel Cron job, or a Supabase Edge Function
+  with outbound HTTP. Its inline comments flag the couple of FMP field/endpoint assumptions
+  that are written from documentation rather than a verified live response, since it hasn't
+  been exercised against a live API call in this repo's history yet — verify against a live
+  run before trusting it broadly.
 
 ## Auto-discovery of new managers/funds
 

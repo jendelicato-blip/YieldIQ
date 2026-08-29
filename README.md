@@ -23,6 +23,19 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+### Refreshing data from Financial Modeling Prep
+
+Set `FMP_API_KEY` (in `.env.local`, gitignored, or as an environment variable) and run:
+
+```bash
+npm run ingest:fmp
+```
+
+This pulls live quotes, ETF info, dividend history, and price history for every active fund
+and merges them into `src/data/seed/`. See `docs/ARCHITECTURE.md` for what it fetches and
+its constraints — it needs outbound network access to financialmodelingprep.com, which some
+sandboxed dev environments block.
+
 ## Project layout
 
 - `src/app/` — pages (Dashboard, Explore, Managers, Fund detail, Screener, High Yield,
