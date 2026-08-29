@@ -272,7 +272,10 @@ function Performance({ ratings }: { ratings: ComputedFundRatings }) {
                   {p.source === "reported" ? (
                     <span
                       className="rounded-full bg-info/15 px-2 py-0.5 text-[10px] font-semibold text-info"
-                      title={p.reportedSourceName ? `Reported by ${p.reportedSourceName}` : "Issuer/data-provider reported"}
+                      title={[
+                        p.reportedSourceName ? `Reported by ${p.reportedSourceName}` : "Issuer/data-provider reported",
+                        p.reportedAsOfDate ? `as of ${p.reportedAsOfDate}` : "exact as-of date not stated by source",
+                      ].join(", ")}
                     >
                       Reported
                     </span>

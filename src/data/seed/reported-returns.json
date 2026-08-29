@@ -308,5 +308,865 @@
     "source_name": "stockanalysis.com (as-of date approximate (day not specified by source))",
     "source_url": "https://stockanalysis.com/etf/spyi/",
     "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "QQQI",
+    "period": "1M",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": -5.7,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=QQQI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "QQQI",
+    "period": "3M",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 1.2,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=QQQI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "QQQI",
+    "period": "6M",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 5.6,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=QQQI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "QQQI",
+    "period": "YTD",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 6.9,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=QQQI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "QQQI",
+    "period": "1Y",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 16.0,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=QQQI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BTCI",
+    "period": "1M",
+    "as_of_date": "2026-06-30",
+    "price_return_pct": null,
+    "total_return_pct": -19.2,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=BTCI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BTCI",
+    "period": "3M",
+    "as_of_date": "2026-06-30",
+    "price_return_pct": null,
+    "total_return_pct": -12.5,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=BTCI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BTCI",
+    "period": "6M",
+    "as_of_date": "2026-06-30",
+    "price_return_pct": null,
+    "total_return_pct": -30.3,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=BTCI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BTCI",
+    "period": "YTD",
+    "as_of_date": "2026-06-30",
+    "price_return_pct": null,
+    "total_return_pct": -30.3,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=BTCI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BTCI",
+    "period": "1Y",
+    "as_of_date": "2026-06-30",
+    "price_return_pct": null,
+    "total_return_pct": -40.9,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=BTCI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XQQI",
+    "period": "1M",
+    "as_of_date": "2026-05-31",
+    "price_return_pct": null,
+    "total_return_pct": 9.4,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=XQQI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XQQI",
+    "period": "3M",
+    "as_of_date": "2026-05-31",
+    "price_return_pct": null,
+    "total_return_pct": 18.6,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=XQQI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XQQI",
+    "period": "SI",
+    "as_of_date": "2026-05-31",
+    "price_return_pct": null,
+    "total_return_pct": 15.4,
+    "source_name": "Charles Schwab ETF Research Report (load-adjusted total return)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=XQQI",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CSHI",
+    "period": "1M",
+    "as_of_date": "2026-08-25",
+    "price_return_pct": null,
+    "total_return_pct": 0.42,
+    "source_name": "Yahoo Finance / financecharts.com (via search)",
+    "source_url": "https://finance.yahoo.com/quote/CSHI/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CSHI",
+    "period": "3M",
+    "as_of_date": "2026-08-25",
+    "price_return_pct": null,
+    "total_return_pct": 1.12,
+    "source_name": "Yahoo Finance / financecharts.com (via search)",
+    "source_url": "https://finance.yahoo.com/quote/CSHI/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CSHI",
+    "period": "YTD",
+    "as_of_date": "2026-08-25",
+    "price_return_pct": null,
+    "total_return_pct": 2.98,
+    "source_name": "Yahoo Finance / financecharts.com (via search)",
+    "source_url": "https://finance.yahoo.com/quote/CSHI/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CSHI",
+    "period": "1Y",
+    "as_of_date": "2026-08-25",
+    "price_return_pct": null,
+    "total_return_pct": 5.29,
+    "source_name": "Yahoo Finance / financecharts.com (via search)",
+    "source_url": "https://finance.yahoo.com/quote/CSHI/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GIAX",
+    "period": "YTD",
+    "as_of_date": "2026-08-17",
+    "price_return_pct": null,
+    "total_return_pct": 17.26,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/giax/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GIAX",
+    "period": "1Y",
+    "as_of_date": "2026-08-17",
+    "price_return_pct": null,
+    "total_return_pct": 19.76,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/giax/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BLOX",
+    "period": "YTD",
+    "as_of_date": "2026-06-18",
+    "price_return_pct": null,
+    "total_return_pct": 17.59,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/blox/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "BLOX",
+    "period": "1Y",
+    "as_of_date": "2026-06-18",
+    "price_return_pct": null,
+    "total_return_pct": 26.61,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/blox/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TSPY",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 19.3,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/tspy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TDAQ",
+    "period": "YTD",
+    "as_of_date": "2026-08-21",
+    "price_return_pct": null,
+    "total_return_pct": 15.23,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/TDAQ/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SVOL",
+    "period": "1M",
+    "as_of_date": "2026-08-21",
+    "price_return_pct": null,
+    "total_return_pct": 0.08,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/SVOL/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SVOL",
+    "period": "3M",
+    "as_of_date": "2026-08-21",
+    "price_return_pct": null,
+    "total_return_pct": 4.56,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/SVOL/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SVOL",
+    "period": "6M",
+    "as_of_date": "2026-08-21",
+    "price_return_pct": null,
+    "total_return_pct": 6.73,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/SVOL/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SVOL",
+    "period": "YTD",
+    "as_of_date": "2026-08-21",
+    "price_return_pct": null,
+    "total_return_pct": 1.53,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/SVOL/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SVOL",
+    "period": "1Y",
+    "as_of_date": "2026-08-21",
+    "price_return_pct": null,
+    "total_return_pct": 16.02,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/SVOL/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "EGGY",
+    "period": "YTD",
+    "as_of_date": "2026-08-24",
+    "price_return_pct": null,
+    "total_return_pct": 14.6,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/eggy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "EGGY",
+    "period": "1Y",
+    "as_of_date": "2026-08-24",
+    "price_return_pct": null,
+    "total_return_pct": 17.03,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/eggy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "EGGS",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 11.23,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/eggs/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "QYLD",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 10.56,
+    "source_name": "financecharts.com",
+    "source_url": "https://www.financecharts.com/etfs/QYLD/performance/total-return",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "QYLD",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 21.32,
+    "source_name": "financecharts.com",
+    "source_url": "https://www.financecharts.com/etfs/QYLD/performance/total-return",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XYLD",
+    "period": "1M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -2.94,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/XYLD/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XYLD",
+    "period": "3M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -1.05,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/XYLD/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XYLD",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -1.05,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/XYLD/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XYLD",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 10.67,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/XYLD/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "RYLD",
+    "period": "1M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 2.5,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/RYLD/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "RYLD",
+    "period": "3M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 10.56,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/RYLD/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "RYLD",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 10.89,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/RYLD/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "RYLD",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 20.92,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/RYLD/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "DIVO",
+    "period": "1M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 3.0,
+    "source_name": "Charles Schwab ETF Research Report / financecharts.com (blended, dates Jul 31-Aug 21 2026)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=DIVO",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "DIVO",
+    "period": "3M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 3.6,
+    "source_name": "Charles Schwab ETF Research Report / financecharts.com (blended, dates Jul 31-Aug 21 2026)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=DIVO",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "DIVO",
+    "period": "6M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 5.4,
+    "source_name": "Charles Schwab ETF Research Report / financecharts.com (blended, dates Jul 31-Aug 21 2026)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=DIVO",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "DIVO",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 11.4,
+    "source_name": "Charles Schwab ETF Research Report / financecharts.com (blended, dates Jul 31-Aug 21 2026)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=DIVO",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "DIVO",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 17.3,
+    "source_name": "Charles Schwab ETF Research Report / financecharts.com (blended, dates Jul 31-Aug 21 2026)",
+    "source_url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=DIVO",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "MSTY",
+    "period": "YTD",
+    "as_of_date": "2026-08-24",
+    "price_return_pct": null,
+    "total_return_pct": -17.0,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/msty/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TSLY",
+    "period": "1M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -4.18,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/tsly/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TSLY",
+    "period": "3M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -8.35,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/tsly/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TSLY",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 8.7,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/tsly/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TSLY",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 5.01,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/tsly/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "NVDY",
+    "period": "YTD",
+    "as_of_date": "2026-07-17",
+    "price_return_pct": null,
+    "total_return_pct": 8.69,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/nvdy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "NVDY",
+    "period": "1Y",
+    "as_of_date": "2026-07-17",
+    "price_return_pct": null,
+    "total_return_pct": 21.03,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/nvdy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CONY",
+    "period": "YTD",
+    "as_of_date": "2026-05-29",
+    "price_return_pct": null,
+    "total_return_pct": -15.57,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/cony/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CONY",
+    "period": "1Y",
+    "as_of_date": "2026-05-29",
+    "price_return_pct": null,
+    "total_return_pct": -32.3,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/cony/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "PLTY",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 20.5,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/plty/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "AMDY",
+    "period": "YTD",
+    "as_of_date": "2026-06-25",
+    "price_return_pct": null,
+    "total_return_pct": 101.1,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/amdy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "AMDY",
+    "period": "1Y",
+    "as_of_date": "2026-06-25",
+    "price_return_pct": null,
+    "total_return_pct": 131.34,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/amdy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "NFLY",
+    "period": "1M",
+    "as_of_date": "2026-08-18",
+    "price_return_pct": null,
+    "total_return_pct": 16.28,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/NFLY/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "NFLY",
+    "period": "3M",
+    "as_of_date": "2026-08-18",
+    "price_return_pct": null,
+    "total_return_pct": 12.1,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/NFLY/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "NFLY",
+    "period": "YTD",
+    "as_of_date": "2026-08-18",
+    "price_return_pct": null,
+    "total_return_pct": 20.71,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/NFLY/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "NFLY",
+    "period": "1Y",
+    "as_of_date": "2026-08-18",
+    "price_return_pct": null,
+    "total_return_pct": 79.98,
+    "source_name": "Yahoo Finance (via search)",
+    "source_url": "https://finance.yahoo.com/quote/NFLY/performance/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SMCY",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -9.77,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/smcy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SMCY",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -19.47,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/smcy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SNOY",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 24.46,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/snoy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GDXY",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 5.61,
+    "source_name": "stockanalysis.com / financecharts.com (via search)",
+    "source_url": "https://stockanalysis.com/etf/gdxy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "GDXY",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 33.71,
+    "source_name": "stockanalysis.com / financecharts.com (via search)",
+    "source_url": "https://stockanalysis.com/etf/gdxy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CVNY",
+    "period": "1M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -5.13,
+    "source_name": "stockanalysis.com (via search)",
+    "source_url": "https://stockanalysis.com/etf/cvny/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CVNY",
+    "period": "3M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -22.76,
+    "source_name": "stockanalysis.com (via search)",
+    "source_url": "https://stockanalysis.com/etf/cvny/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CVNY",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -22.76,
+    "source_name": "stockanalysis.com (via search)",
+    "source_url": "https://stockanalysis.com/etf/cvny/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "CVNY",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 48.15,
+    "source_name": "stockanalysis.com (via search)",
+    "source_url": "https://stockanalysis.com/etf/cvny/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "MARO",
+    "period": "YTD",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": 5.71,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/maro/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "MARO",
+    "period": "1Y",
+    "as_of_date": "2026-07-31",
+    "price_return_pct": null,
+    "total_return_pct": -40.39,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/maro/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "HOOY",
+    "period": "1M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -3.45,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/hooy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "HOOY",
+    "period": "6M",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -30.6,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/hooy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "HOOY",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 2.0,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/hooy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "HOOY",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": -6.67,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/hooy/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "DJIA",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 17.27,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/djia/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "SDIV",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 14.62,
+    "source_name": "financecharts.com (via search)",
+    "source_url": "https://www.financecharts.com/etfs/SDIV/performance/total-return",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "DIV",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 14.52,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/div/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "DIV",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 19.48,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/div/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XPAY",
+    "period": "YTD",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 12.72,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/xpay/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "XPAY",
+    "period": "1Y",
+    "as_of_date": null,
+    "price_return_pct": null,
+    "total_return_pct": 19.73,
+    "source_name": "stockanalysis.com",
+    "source_url": "https://stockanalysis.com/etf/xpay/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TPAY",
+    "period": "1M",
+    "as_of_date": "2026-07-15",
+    "price_return_pct": null,
+    "total_return_pct": 0.2,
+    "source_name": "stockanalysis.com / StockTitan (via search)",
+    "source_url": "https://stockanalysis.com/etf/tpay/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TPAY",
+    "period": "6M",
+    "as_of_date": "2026-07-15",
+    "price_return_pct": null,
+    "total_return_pct": 9.36,
+    "source_name": "stockanalysis.com / StockTitan (via search)",
+    "source_url": "https://stockanalysis.com/etf/tpay/",
+    "verification_status": "partially_verified"
+  },
+  {
+    "fund_ticker": "TPAY",
+    "period": "YTD",
+    "as_of_date": "2026-07-15",
+    "price_return_pct": null,
+    "total_return_pct": 10.82,
+    "source_name": "stockanalysis.com / StockTitan (via search)",
+    "source_url": "https://stockanalysis.com/etf/tpay/",
+    "verification_status": "partially_verified"
   }
 ]

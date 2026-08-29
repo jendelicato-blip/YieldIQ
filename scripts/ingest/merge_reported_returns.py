@@ -35,7 +35,7 @@ def explode(records):
             rows.append({
                 "fund_ticker": ticker,
                 "period": period,
-                "as_of_date": as_of or "unknown",
+                "as_of_date": as_of,  # None is valid: source didn't state a precise date
                 "price_return_pct": price,
                 "total_return_pct": total,
                 "source_name": rec.get("source_name"),

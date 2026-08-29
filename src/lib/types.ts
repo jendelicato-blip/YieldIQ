@@ -230,7 +230,7 @@ export type ReportedReturnPeriod = "1M" | "3M" | "6M" | "YTD" | "1Y" | "3Y" | "5
 export interface FundReportedReturn {
   fund_ticker: string;
   period: ReportedReturnPeriod;
-  as_of_date: string;
+  as_of_date: string | null; // null when the source didn't state a precise date
   price_return_pct: number | null;
   total_return_pct: number | null; // distributions reinvested, when the source publishes it separately
   source_name: string | null;

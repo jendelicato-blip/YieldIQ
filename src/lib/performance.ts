@@ -49,6 +49,7 @@ export interface PeriodReturn {
   source: "computed" | "reported";
   reportedSourceName?: string | null;
   reportedSourceUrl?: string | null;
+  reportedAsOfDate?: string | null;
 }
 
 function daysForPeriod(period: PerformancePeriod, asOf: Date): number | null {
@@ -242,6 +243,7 @@ export function mergeWithReportedReturns(
       source: "reported",
       reportedSourceName: match.source_name,
       reportedSourceUrl: match.source_url,
+      reportedAsOfDate: match.as_of_date,
     };
   });
 }
