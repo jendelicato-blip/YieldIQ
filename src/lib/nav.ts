@@ -11,6 +11,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Weekly Income", href: "/weekly-income" },
   { label: "Monthly Income", href: "/monthly-income" },
   { label: "Dividend Calendar", href: "/calendar" },
+  { label: "Content Engine", href: "/content" },
   { label: "Compare", href: "/compare" },
   { label: "Watchlist", href: "/watchlist" },
   { label: "Portfolio", href: "/portfolio" },
